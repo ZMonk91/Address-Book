@@ -31,8 +31,8 @@ foreach ($contactIds as $contactId): ?>
         <td>
             <?=htmlspecialchars($contactNames[$contactId-1], ENT_QUOTES, 'UTF-8'); ?>
         </td>
-        <td>                    <span class="small float-right"><a href="edit.php?id=<?=$contactId?>">Edit</a><a> |</a>
-                        <a href="delete.php?id=<?=$contactId?>">  Delete</a></span>
+        <td>                    <span class="small float-right"><a href="edit.php?id=<?=$contactId?>&name=<?=htmlspecialchars($contactNames[$contactId-1], ENT_QUOTES, 'UTF-8'); ?>&Number=<?=htmlspecialchars($contactNumbers[$contactId-1],ENT_QUOTES,'UTF-8');?>">Edit</a><a> |</a>
+                        <a href="delete.php?id=<?=$contactId?>&name=<?=htmlspecialchars($contactNames[$contactId-1], ENT_QUOTES, 'UTF-8'); ?>">  Delete</a></span>
             <?=htmlspecialchars($contactNumbers[$contactId-1],ENT_QUOTES,'UTF-8');?>
         </td>
 

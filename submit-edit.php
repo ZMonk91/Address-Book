@@ -12,14 +12,8 @@
     try {
     $counterCheck = "ALTER TABLE contacts AUTO_INCREMENT=1";
     $pdo->query($counterCheck);
-    $sql = "INSERT INTO contacts (contactName, contactPhone)
-VALUES ('".$_POST["contactName"]."','".$_POST["contactPhone"]."')";
-        if ($pdo->query($sql)) {
-           echo "<script type= 'text/javascript'>alert('Sucessfully Created Contact');</script>";
-}
-       else{
-           echo "<script type= 'text/javascript'>alert('Contact update was unsuccessfull');</script>";
-}
+    $sql = "UPDATE contacts SET contactName='".$_POST["contactName"]."', contactPhone='".$_POST["contactPhone"]."' WHERE contactId='".$_POST["contactId"]."'";
+    $pdo->query($sql);
 }
 
     catch (PDOException $e) {
